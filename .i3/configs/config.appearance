@@ -17,8 +17,7 @@ font Monospace 8
 
 # Start i3bar workspace bar
 bar {
-	tray_output eDP1
-	#tray_output DP-1
+	tray_output $primary_display
 	font pango:san-serif 8
 	colors {
 		background	#2f343f
