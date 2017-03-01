@@ -1,0 +1,42 @@
+#################
+# COLORS CONFIG #
+#################
+
+set $black		#2C2836
+set $darkblack		#73707E
+set $red		#BB7473
+set $darkred		#CF9FA4
+set $green		#8AE234
+set $darkgreen		#9ACBAD
+set $yellow		#ABB773
+set $darkyellow		#C5CBA4
+set $blue		#7865C5
+set $darkblue		#A396D9
+set $magenta		#BB65B6
+set $darkmagenta	#CF96CF
+set $cyan		#68A8C5
+set $darkcyan		#9AC1D9
+set $white		#F1EDFB
+set $darkwhite		#F1EDFB
+set $background		#222222
+set $flagblue		#0052A5
+set $flagred		#E0162B
+
+set $base00		#181818
+set $base01		#282828
+set $base02		#383838
+set $base03		#585858
+set $base04		#B8B8B8
+set $base05		#D8D8D8
+set $base06		#E8E8E8
+set $base07		#F8F8F8
+set $base08		#AB4642
+set $base09		#DC9656
+set $base0A		#F7CA88
+set $base0B		#A1B56C
+set $base0C		#86C1B9
+set $base0D		#7CAFC2
+set $base0E		#BA8BAF
+set $base0F		#A16946
+
+

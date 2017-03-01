@@ -1,0 +1,14 @@
+#autostarts
+exec --no-startup-id pasystray
+exec --no-startup-id nm-applet
+exec --no-startup-id xrdb-merge ~/.Xresources
+#exec --no-startup-id compton --vsync opengl-swc -b --dbus
+exec --no-startup-id compton -cC -fF --unredir-if-possible
+exec --no-startup-id blueman-applet
+exec --no-startup-id twmnd
+exec --no-startup-id sh ~/.fehbg
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
+exec --no-startup-id ckb --background
+exec --no-startup-id light-locker
+exec --no-startup-id powerline-daemon -q

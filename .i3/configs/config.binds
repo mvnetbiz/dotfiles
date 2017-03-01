@@ -1,0 +1,191 @@
+set $mod Mod4
+set $altkey Mod1
+
+bindsym Mod1+ctrl fullscreen toggle
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+focus_follows_mouse no
+
+# audio controls
+set $update pkill -RTMIN+10 i3blocks 
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && update
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && update
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && $update
+
+# media controls
+bindsym ctrl+$mod+space exec playerctl play-pause
+bindsym ctrl+$mod+Left exec playerctl previous && update
+bindsym ctrl+$mod+Right exec playerctl next && update
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioPrev exec playerctl previous && update
+bindsym XF86AudioNext exec playerctl next && update
+
+#backlight controls
+bindsym XF86KbdBrightnessDown exec xbacklight -5
+bindsym XF86KbdBrightnessUp exec xbacklight +5
+
+bindsym $mod+backslash sticky toggle
+
+
+bindsym $mod+d exec rofi -show drun -sidebar-mode
+bindsym $mod+Return exec gnome-terminal
+bindsym $mod+t exec nautilus -w
+bindsym $mod+c exec chromium
+bindsym $mod+m exec chromium -app="chrome-extension://flejfacjooompmliegamfbpjjdlhokhj/devices.html?tab=sms&popup=1"
+bindsym $mod+o exec transset -t -a 2 -x 2
+bindsym $mod+i exec ~/bin/inv.sh
+bindsym $mod+b exec blueman-manager
+bindsym $mod+$altkey+l exec light-locker-command -l
+#bindsym $mod+g exec --no-startup-id bash ~/bin/togglegaps
+bindsym $mod+g exec --no-startup-id bash ~/bin/toggledark.bash
+# rename workspace
+bindsym $mod+Tab exec i3-input -F 'rename workspace to %s' -P 'New name: '
+# ungrab mouse
+bindsym $mod+esc exec sleep 1 && xdotool key XF86Ungrab
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r exec ~/.i3/makei3conf.sh && sleep 0 && i3-msg restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec i3-msg exit
+
+# kill focused window
+bindsym $mod+Shift+q kill
+# window stays in active workspace
+bindsym $mod+Shift+s sticky toggle
+
+# change focus
+bindsym $mod+j		focus left
+bindsym $mod+k		focus down
+bindsym $mod+l		focus up
+bindsym $mod+semicolon	focus right
+bindsym $mod+Left	focus left
+bindsym $mod+Down	focus down
+bindsym $mod+Up		focus up
+bindsym $mod+Right	focus right
+
+# move focused window
+bindsym $mod+Shift+j		move left
+bindsym $mod+Shift+k		move down
+bindsym $mod+Shift+l		move up
+bindsym $mod+Shift+semicolon	move right
+bindsym $mod+Shift+Left		move left
+bindsym $mod+Shift+Down		move down
+bindsym $mod+Shift+Up		move up
+bindsym $mod+Shift+Right	move right
+
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
+
+# switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+	bindsym	j		resize	shrink	width	10 px or 10 ppt
+	bindsym	k		resize	grow	height	10 px or 10 ppt
+	bindsym	l		resize	shrink	height	10 px or 10 ppt
+	bindsym	semicolon 	resize	grow	width	10 px or 10 ppt
+
+	# Small resize
+	bindsym	Shift+j		resize	shrink	width	2px or 2ppt
+	bindsym	Shift+k		resize	grow	height	2px or 2ppt
+	bindsym	Shift+l		resize	shrink	height	2px or 2ppt
+	bindsym	Shift+semicolon	resize	grow	width	2px or 2ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+	# Small arrow resize
+	bindsym Shift+Left resize shrink width 2px or 2ppt
+	bindsym Shift+Down resize grow height 2px or 2ppt
+	bindsym Shift+Up resize shrink height 2px or 2ppt
+	bindsym Shift+Right resize grow width 2px or 2ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# adjust window gaps
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+

@@ -1,0 +1,6 @@
+#workspace 1 output DVI-D-1
+#workspace 2 output DisplayPort-0
+#workspace 3 output HDMI-A-0
+
+workspace 1 output DisplayPort-0
+workspace 6 output HDMI-A-0
