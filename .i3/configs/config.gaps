@@ -1,10 +1,11 @@
 #i3-gaps settings
+set $gapsw 2
 focus_follows_mouse no
-for_window [class="^.*"] border pixel 4
-new_window pixel 4
-for_window [floating] border pixel 2
-for_window [tiling] border pixel 4
-for_window [tiling] pixel 4
+for_window [class="^.*"] border pixel $gapsw
+new_window pixel $gapsw
+#for_window [floating] border pixel $gapsw
+#for_window [tiling] border pixel $gapsw
+#for_window [tiling] pixel $gapsw
 gaps inner 15
 gaps outer 10
 
