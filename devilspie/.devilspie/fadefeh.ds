@@ -1,6 +1,6 @@
 ( if
 ( contains ( window_class ) "feh" )
 ( begin
-( spawn_async (str "~/.bin/fadekill.bash " (window_xid) ))
+( spawn_async (str "bash /home/matt/.bin/fadekill.bash " (window_xid) ))
 )
 )
