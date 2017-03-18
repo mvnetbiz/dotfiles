@@ -1,7 +1,6 @@
 #autostarts
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
-exec --no-startup-id xrdb-merge ~/.Xresources
 #exec --no-startup-id compton --vsync opengl-swc -b --dbus
 exec --no-startup-id compton -cC -fF --unredir-if-possible
 exec --no-startup-id blueman-applet
