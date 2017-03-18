@@ -1,10 +1,12 @@
+set $primary_display eDP1
 #i3-gaps settings
+set $gapsw 2
 focus_follows_mouse no
-for_window [class="^.*"] border pixel 4
-new_window pixel 4
-for_window [floating] border pixel 2
-for_window [tiling] border pixel 4
-for_window [tiling] pixel 4
+for_window [class="^.*"] border pixel $gapsw
+new_window pixel $gapsw
+#for_window [floating] border pixel $gapsw
+#for_window [tiling] border pixel $gapsw
+#for_window [tiling] pixel $gapsw
 gaps inner 15
 gaps outer 10
 
@@ -77,8 +79,7 @@ font Monospace 8
 
 # Start i3bar workspace bar
 bar {
-	tray_output eDP1
-	#tray_output DP-1
+	tray_output $primary_display
 	font pango:san-serif 8
 	colors {
 		background	#2f343f
@@ -290,7 +291,6 @@ mode "$mode_gaps_outer" {
 #autostarts
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
-exec --no-startup-id xrdb-merge ~/.Xresources
 #exec --no-startup-id compton --vsync opengl-swc -b --dbus
 exec --no-startup-id compton -cC -fF --unredir-if-possible
 exec --no-startup-id blueman-applet
