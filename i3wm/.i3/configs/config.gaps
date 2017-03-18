@@ -9,6 +9,8 @@ new_window pixel $gapsw
 gaps inner 15
 gaps outer 10
 
+for_window [class="feh"] floating enable
+for_window [class="feh"] move down
 
 assign [class="Steam"] 5:Steam
 for_window [instance="crx_nckgahadagoaajjgafhacjanaoiihapd"] floating enable
