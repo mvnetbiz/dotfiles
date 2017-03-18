@@ -8,3 +8,6 @@ if not pgrep -fx "/usr/bin/python /usr/bin/powerline-daemon -q" 1>/dev/null
         powerline-daemon -q
 end
 
+abbr l "ls -lhgG --time-style='+' --color=auto"                                                      
+
+
