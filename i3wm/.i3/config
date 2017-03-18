@@ -128,7 +128,7 @@ bindsym XF86KbdBrightnessUp exec xbacklight +5
 bindsym $mod+backslash sticky toggle
 
 
-bindsym $mod+d exec rofi -show drun -sidebar-mode
+bindsym $mod+d exec ~/.bin/rofi.bash
 bindsym $mod+Return exec gnome-terminal
 bindsym $mod+t exec nautilus -w
 bindsym $mod+c exec chromium
@@ -137,8 +137,8 @@ bindsym $mod+o exec transset -t -a 2 -x 2
 bindsym $mod+i exec ~/bin/inv.sh
 bindsym $mod+b exec blueman-manager
 bindsym $mod+$altkey+l exec light-locker-command -l
-#bindsym $mod+g exec --no-startup-id bash ~/bin/togglegaps
-bindsym $mod+g exec --no-startup-id bash ~/bin/toggledark.bash
+#bindsym $mod+g exec --no-startup-id bash ~/.bin/togglegaps
+bindsym $mod+g exec --no-startup-id bash ~/.bin/toggledark.bash
 # rename workspace
 bindsym $mod+Tab exec i3-input -F 'rename workspace to %s' -P 'New name: '
 # ungrab mouse
