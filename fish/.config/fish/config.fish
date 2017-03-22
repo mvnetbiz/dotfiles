@@ -9,5 +9,5 @@ if not pgrep -fx "/usr/bin/python /usr/bin/powerline-daemon -q" 1>/dev/null
 end
 
 abbr l "ls -lhgG --time-style='+' --color=auto"                                                      
-
+abbr r "/usr/share/vim/vim80/macros/less.sh"
 
