@@ -29,12 +29,14 @@ bindsym XF86KbdBrightnessUp exec xbacklight +5
 bindsym $mod+backslash sticky toggle
 
 
-bindsym $mod+d exec ~/.bin/rofi.bash
+bindsym $mod+d exec ~/.bin/rofi.bash -modi run -show run
+bindsym $mod+p exec ~/.bin/rofi.bash -modi drun -show drun
+bindsym $mod+o exec ~/.bin/rofi.bash -modi window -show window
 bindsym $mod+Return exec gnome-terminal
 bindsym $mod+t exec nautilus -w
 bindsym $mod+c exec chromium
 bindsym $mod+m exec chromium -app="chrome-extension://flejfacjooompmliegamfbpjjdlhokhj/devices.html?tab=sms&popup=1"
-bindsym $mod+o exec transset -t -a 2 -x 2
+#bindsym $mod+o exec transset -t -a 2 -x 2
 bindsym $mod+i exec ~/bin/inv.sh
 bindsym $mod+b exec blueman-manager
 bindsym $mod+$altkey+l exec light-locker-command -l
