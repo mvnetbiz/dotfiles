@@ -1,6 +1,6 @@
-set exrc
+"set exrc
 set secure
-set colorcolumn=110
+"set colorcolumn=110
 set number
 set laststatus=2
 set showtabline=2
@@ -29,7 +29,7 @@ set mouse=a
 
 function! NumberToggle()
   if(&relativenumber == 1)
-    set number
+    set norelativenumber
   else
     set relativenumber
   endif
