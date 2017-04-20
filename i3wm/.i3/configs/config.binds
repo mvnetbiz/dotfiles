@@ -43,7 +43,7 @@ bindsym $mod+$altkey+l exec light-locker-command -l
 #bindsym $mod+g exec --no-startup-id bash ~/.bin/togglegaps
 bindsym $mod+g exec --no-startup-id bash ~/.bin/toggledark.bash
 # rename workspace
-bindsym $mod+Tab exec i3-input -F 'rename workspace to %s' -P 'New name: '
+bindsym $mod+Tab exec bash ~/.bin/rename-workspace
 # ungrab mouse
 bindsym $mod+esc exec sleep 1 && xdotool key XF86Ungrab
 # reload the configuration file
